@@ -1,0 +1,108 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* 画面全体の高さ */
+    background-color: #f0f2f5; /* 薄い背景色 */
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box; /* パディングを含めてサイズを計算 */
+}
+
+.timer-container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 400px; /* 最大幅を設定してスマホでも見やすく */
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 25px;
+    font-size: 2em;
+}
+
+.timer-display {
+    font-size: 5em; /* 大きなフォントサイズ */
+    font-weight: bold;
+    color: #4CAF50; /* 緑色 */
+    margin-bottom: 30px;
+    background-color: #e8f5e9; /* 薄い緑の背景 */
+    padding: 15px 20px;
+    border-radius: 10px;
+    display: inline-block; /* 中央寄せ */
+    min-width: 250px; /* 最小幅を設定 */
+}
+
+.preset-buttons, .control-buttons {
+    margin-bottom: 25px;
+    display: flex; /* ボタンを横並びにする */
+    justify-content: center; /* 中央寄せ */
+    gap: 15px; /* ボタン間のスペース */
+    flex-wrap: wrap; /* 画面が狭い時に折り返す */
+}
+
+.preset-button, .control-button {
+    background-color: #007bff; /* 青色 */
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    font-size: 1.1em;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* ホバー時のアニメーション */
+    min-width: 100px; /* ボタンの最小幅 */
+}
+
+.preset-button:hover, .control-button:hover {
+    background-color: #0056b3; /* 濃い青 */
+}
+
+/* スタートボタンは特に目立たせる */
+#start {
+    background-color: #28a745; /* 緑色 */
+}
+
+#start:hover {
+    background-color: #218838; /* 濃い緑 */
+}
+
+/* ストップボタンは赤色 */
+#stop {
+    background-color: #dc3545; /* 赤色 */
+}
+
+#stop:hover {
+    background-color: #c82333; /* 濃い赤 */
+}
+
+/* リセットボタンは灰色 */
+#reset {
+    background-color: #6c757d; /* 灰色 */
+}
+
+#reset:hover {
+    background-color: #5a6268; /* 濃い灰色 */
+}
+
+/* スマホでの表示調整 */
+@media (max-width: 600px) {
+    .timer-display {
+        font-size: 4em;
+        min-width: unset; /* スマホで最小幅を解除 */
+    }
+
+    .preset-buttons, .control-buttons {
+        flex-direction: column; /* スマホでは縦並びにする */
+        align-items: center; /* 中央寄せ */
+    }
+
+    .preset-button, .control-button {
+        width: 80%; /* スマホでボタンの幅を広く */
+        max-width: 250px; /* ボタンの最大幅 */
+    }
+}
